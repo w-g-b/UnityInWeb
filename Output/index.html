@@ -10,15 +10,15 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <!--引入外部的Bootstrap中的css文件-->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
     <!--jQuery文件，必须在bootstrap.min.js之前先引用-->
-    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="Bootstrap/js/jquery.min.js"></script>
     <!--引入jQuery文件之后再引入Bootstrap.min.js文件-->
     <!--由于Bootstrap依赖jQuery，所以引入的时候要注意顺序-->
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="Bootstrap/js/Bootstrap.min.js"></script>
     <script>
-        var bannerBar = UnityLoader.instantiate("bannerBar", "Build/Output.json", {onProgress: UnityProgress});
-        var modelShow = UnityLoader.instantiate("modelShow", "Build/Output.json", {onProgress: UnityProgress});
+        var bannerBar = UnityLoader.instantiate("bannerBar", "BannerBar/BannerBar.json", {onProgress: UnityProgress});
+        var modelShow = UnityLoader.instantiate("modelShow", "ModelShow/ModelShow.json", {onProgress: UnityProgress});
     </script>
     <Style>
         div[class="col-md-1"] {
