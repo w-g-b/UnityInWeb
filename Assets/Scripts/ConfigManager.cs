@@ -18,14 +18,7 @@ public class ConfigManager : MonoBehaviour
 
     public void SetBannerImage(int i)
     {
-        bannerImage.sprite = ConfigInfo.Instance.getBannerSprite(1);
+        bannerImage.sprite = ConfigInfo.Instance.getBannerSprite(i);
     }
-
-    private void Start()
-    {
-    }
-
-    private void Update()
-    {
-    }
+    
 }
