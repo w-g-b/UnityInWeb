@@ -27,22 +27,15 @@
     </Style>
 
     <script type="text/javascript">
-        function initUnity() {
-            bannerBar.SendMessage("Scripts", "LoadScene", "BannerBar");
-            modelShow.SendMessage("Scripts", "LoadScene", "ModelShow");
+        function setBannerImage(i) {
+            bannerBar.SendMessage("Scripts", "SetBannerImage", i);
 
         }
 
-        function setBannerImage() {
-            bannerBar.SendMessage("Scripts", "SetBannerImage", 1);
-        }
-
-        function setBannerImage1() {
-            bannerBar.SendMessage("Scripts", "SetBannerImage", 2);
-        }
-
-        function setBannerImage2() {
-            bannerBar.SendMessage("Scripts", "SetBannerImage", 3);
+        function setModel(i) {
+            modelShow.SendMessage("Scripts", "ShowModel", i);
+            document.getElementById("modelLeft").src="Images/"+i+".png";
+            document.getElementById("modelRight").src="Images/"+i+".png";
         }
 
     </script>
@@ -52,11 +45,11 @@
     <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
         <div class="container">
             <div class="navbar-header">
-                <img src="Images/icon.png" style="margin-top: 5px;margin-right: 100px"  height="40px"/>
+                <img src="Images/icon.png" style="margin-top: 5px;margin-right: 100px" height="40px"/>
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">详情</a></li>
+                    <li class="active"><a href="#">介绍</a></li>
                     <li><a href="#">工艺</a></li>
                     <li><a href="#">历史</a></li>
                     <li><a href="#">关于</a></li>
@@ -64,13 +57,7 @@
             </div>
         </div>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="row">
+    <div class="row" style="margin-top: 50px;">
         <div class="col-md-1">col-1</div>
         <div class="col-md-1">col-2</div>
         <div class="col-md-1">col-3</div>
@@ -87,31 +74,46 @@
     <div class="row">
         <!--<div id="gameContainer" class="col-md-10"/>-->
         <!--<div class="col-md-2">2222</div>-->
-        <div id="bannerBar" class="col-md-8 col-md-push-2"></div>
-        <!--  <div class="col-md-2">2222</div>-->
+        <div id="bannerBar" class="col-md-10 col-md-push-1" style="height: 400px"></div>
     </div>
+
     <div class="row">
-        <div class="col-md-3 text-center">
-            <button class="btn btn-default" onclick="setBannerImage()">按钮</button>
-            <button class="btn btn-success" onclick="setBannerImage1()">按钮</button>
-            <button class="btn btn-danger" onclick="setBannerImage2()">按钮</button>
-            <button class="btn btn-danger" onclick="initUnity()">初始化场景</button>
+    </div>
+
+    <div class="row">
+        <div class="col-md-5"></div>
+        <div class="col-md-3">
+            <button class="btn btn-default" onclick="setBannerImage(1)">按钮1</button>
+            <button class="btn btn-default" onclick="setBannerImage(2)">按钮2</button>
+            <button class="btn btn-default" onclick="setBannerImage(3)">按钮3</button>
         </div>
     </div>
 
+
+    <div class="row text-center">
+        <div class="col-md-4">
+            <img src="Images/1.png" id="modelLeft" style="height: 350px">
+        </div>
+        <div class="col-md-4" id="modelShow" style="width: 350px; height: 350px;"></div>
+        <div class="col-md-4">
+            <img src="Images/1.png" id="modelRight" style="height: 350px">
+        </div>
+    </div>
     <div class="row">
-        <!--<div id="gameContainer" class="col-md-10"/>-->
-        <!--<div class="col-md-2">2222</div>-->
-        <div id="modelShow" class="col-md-4 col-md-push-2" style="height: 323px;"></div>
-        <!--  <div class="col-md-2">2222</div>-->
+        <div class="col-md-4"></div>
+        <div class="col-md-5">
+            <button class="btn btn-default" onclick="setModel(1)">模型1</button>
+            <button class="btn btn-default" onclick="setModel(2)">模型2</button>
+            <button class="btn btn-default" onclick="setModel(3)">模型3</button>
+            <button class="btn btn-default" onclick="setModel(4)">模型4</button>
+            <button class="btn btn-default" onclick="setModel(5)">模型5</button>
+        </div>
     </div>
 
 
-    <!--<div class="footer">
-        <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>
-        <div class="title">UnityWeb</div>
-    </div>-->
+    <div class="footer panel-footer">
+        <p>页脚</p>
+    </div>
 </div>
 </body>
 </html>

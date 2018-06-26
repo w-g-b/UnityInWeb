@@ -35,11 +35,16 @@ public class MouseControl : MonoBehaviour
     private Vector3 CameraTarget;
 
     //打印欧拉角:绕各个轴旋转的角度，顺时针为正方向  
-    public void Awake()
+    void Awake()
     {
-        print(transform.eulerAngles.x);
-        print(transform.eulerAngles.y);
-        print(transform.eulerAngles.z);
+//        print(transform.eulerAngles.x);
+//        print(transform.eulerAngles.y);
+//        print(transform.eulerAngles.z);
+    }
+
+    void Start()
+    {
+       
     }
 
     void Update()

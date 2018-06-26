@@ -5,7 +5,7 @@
 "asmCodeUrl": "BannerBar.asm.code.unityweb",
 "asmMemoryUrl": "BannerBar.asm.memory.unityweb",
 "asmFrameworkUrl": "BannerBar.asm.framework.unityweb",
-"TOTAL_MEMORY": 268435456,
+"TOTAL_MEMORY": 100435456,
 "graphicsAPI": ["WebGL 2.0", "WebGL 1.0"],
 "webglContextAttributes": {"preserveDrawingBuffer": false},
 "splashScreenStyle": "Dark",
