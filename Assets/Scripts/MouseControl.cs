@@ -31,20 +31,20 @@ public class MouseControl : MonoBehaviour
     //围绕x旋转30°  
     private Quaternion rotation = Quaternion.Euler(new Vector3(30f, 0f, 0f));
 
+    private float topLeft;
+
+    private float topRight;
+
+    private float bottomLeft;
+
+    private float bottomRight;
+
     //目标的3D坐标  
     private Vector3 CameraTarget;
 
-    //打印欧拉角:绕各个轴旋转的角度，顺时针为正方向  
-    void Awake()
-    {
-//        print(transform.eulerAngles.x);
-//        print(transform.eulerAngles.y);
-//        print(transform.eulerAngles.z);
-    }
 
     void Start()
     {
-       
     }
 
     void Update()

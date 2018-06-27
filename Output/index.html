@@ -17,13 +17,14 @@
     <!--由于Bootstrap依赖jQuery，所以引入的时候要注意顺序-->
     <script src="Bootstrap/js/Bootstrap.min.js"></script>
     <script>
-        var bannerBar = UnityLoader.instantiate("bannerBar", "BannerBar/BannerBar.json", {onProgress: UnityProgress});
-        var modelShow = UnityLoader.instantiate("modelShow", "ModelShow/ModelShow.json", {onProgress: UnityProgress});
+//                var bannerBar = UnityLoader.instantiate("bannerBar", "BannerBar/BannerBar.json", {onProgress: UnityProgress});
+//                var modelShow = UnityLoader.instantiate("modelShow", "ModelShow/ModelShow.json", {onProgress: UnityProgress});
     </script>
     <Style>
         div[class="col-md-1"] {
             border: 1px solid red;
         }
+
     </Style>
 
     <script type="text/javascript">
@@ -33,9 +34,99 @@
         }
 
         function setModel(i) {
-            modelShow.SendMessage("Scripts", "ShowModel", i);
-            document.getElementById("modelLeft").src="Images/"+i+".png";
-            document.getElementById("modelRight").src="Images/"+i+".png";
+            document.getElementById("contentIntro").style.display = "";
+            document.getElementById("contentCraft").style.display = "none";
+//            modelShow.SendMessage("Scripts", "ShowModel", i);
+            var furnitureTitle = document.getElementById("furnitureTitle");
+            var furnitureName = document.getElementById("furnitureName");
+            var furnitureIntro = document.getElementById("furnitureIntro");
+            var furnitureSize = document.getElementById("furnitureSize");
+            var furnitureLocal = document.getElementById("furnitureLocal");
+            switch (i) {
+                case 1:
+                    furnitureTitle.innerHTML = "紫檀镶影木玉璧纹博古柜";
+                    furnitureIntro.innerHTML =
+                        "柜门镶以精细雕刻的菠萝格木玉璧纹<br>" +
+                        "上方为格式，每个格精雕作为装饰<br>" +
+                        "以金色彩木雕刻角花，柜上下面相亲，十分得体<br>";
+                    furnitureName.innerHTML = "紫檀镶影木玉璧纹博古柜";
+                    furnitureSize.innerHTML = "高*长*宽：210*80*35cm";
+                    furnitureLocal.innerHTML = "广州高丰藏";
+                    break;
+                case 2:
+                    furnitureTitle.innerHTML = "酸枝高屏斗钩式镶理石长椅";
+                    furnitureIntro.innerHTML =
+                        "酸枝长椅采用高屏斗钩和内收撑直脚，紧凑稳重<br>" +
+                        "尖斗钩是清代后期广东家具的常见形式<br>" +
+                        "斗钩方角为圆角，造型上显得更为活泼灵巧<br>";
+                    furnitureName.innerHTML = "酸枝高屏斗钩式镶理石长椅";
+                    furnitureSize.innerHTML = "高*长*宽：110*156*50cm";
+                    furnitureLocal.innerHTML = "广州市银龙酒家藏";
+                    break;
+                case 3:
+                    furnitureTitle.innerHTML = "酸枝书卷式花樽脚长几";
+                    furnitureIntro.innerHTML =
+                        "长几两端向下半弯曲，几面镶嵌大理石<br>" +
+                        "前牙扁勾末端也作圆曲纹，长几四面脚壮硕<br>" +
+                        "中空束脚如华瓶颈，充分表现了家居的雕刻技巧<br>";
+                    furnitureName.innerHTML = "酸枝书卷式花樽脚长几";
+                    furnitureSize.innerHTML = "高*长*宽：82*112*40cm";
+                    furnitureLocal.innerHTML = "广州市伴溪酒家藏";
+                    break;
+                case 4:
+                    furnitureTitle.innerHTML = "酸枝镶理石洋花林芝手椅";
+                    furnitureIntro.innerHTML =
+                        "椅的靠背上方作凹曲线，中间嵌以理石<br>" +
+                        "扶手为双曲林芝，羊蹄花，工字状<br>" +
+                        "座面作\"鲤鱼肚\"，饰洋花，连珠纹<br>";
+                    furnitureName.innerHTML = "酸枝镶理石洋花林芝手椅";
+                    furnitureSize.innerHTML = "高*长*宽：98*65*48cm";
+                    furnitureLocal.innerHTML = "广州市文化总店藏";
+                    break;
+                case 5:
+                    furnitureTitle.innerHTML = "紫檀镶理石双小几";
+                    furnitureIntro.innerHTML =
+                        "小几既是摆设古玩和名花的用具，又是台架上的装饰<br>" +
+                        "加以名贵的紫檀木制作，做工十分考究<br>" +
+                        "小几下方以拖沙相连，高低均称，享福相成<br>";
+                    furnitureName.innerHTML = "紫檀镶理石双小几";
+                    furnitureSize.innerHTML = "高*长*宽：18*40*20cm";
+                    furnitureLocal.innerHTML = "广州高丰藏";
+                    break;
+            }
+        }
+
+        function selectIntroMenu() {
+            document.getElementById("introMenu").className = "active";
+            document.getElementById("craftMenu").className = "";
+            document.getElementById("historyMenu").className = "";
+            document.getElementById("aboutMenu").className = "";
+        }
+
+        function selectCraftMenu() {
+            document.getElementById("introMenu").className = "";
+            document.getElementById("craftMenu").className = "active";
+            document.getElementById("historyMenu").className = "";
+            document.getElementById("aboutMenu").className = "";
+        }
+
+        function selectHistoryMenu() {
+            document.getElementById("introMenu").className = "";
+            document.getElementById("craftMenu").className = "";
+            document.getElementById("historyMenu").className = "active";
+            document.getElementById("aboutMenu").className = "";
+        }
+
+        function selectAboutMenu() {
+            document.getElementById("introMenu").className = "";
+            document.getElementById("craftMenu").className = "";
+            document.getElementById("historyMenu").className = "";
+            document.getElementById("aboutMenu").className = "active";
+        }
+
+        function inlay() {
+            document.getElementById("contentIntro").style.display = "none";
+            document.getElementById("contentCraft").style.display = "";
         }
 
     </script>
@@ -49,10 +140,10 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">介绍</a></li>
-                    <li><a href="#">工艺</a></li>
-                    <li><a href="#">历史</a></li>
-                    <li><a href="#">关于</a></li>
+                    <li class="active" id="introMenu" onclick="selectIntroMenu()"><a href="#intro">介绍</a></li>
+                    <li id="craftMenu" onclick="selectCraftMenu()"><a href="#craft">工艺</a></li>
+                    <li id="historyMenu" onclick="selectHistoryMenu()"><a href="#history">历史</a></li>
+                    <li id="aboutMenu" onclick="selectAboutMenu()"><a href="#about">关于</a></li>
                 </ul>
             </div>
         </div>
@@ -72,9 +163,7 @@
         <div class="col-md-1">col-12</div>
     </div>
     <div class="row">
-        <!--<div id="gameContainer" class="col-md-10"/>-->
-        <!--<div class="col-md-2">2222</div>-->
-        <div id="bannerBar" class="col-md-10 col-md-push-1" style="height: 400px"></div>
+        <div id="bannerBar" class="col-md-10 col-md-push-1" style="height: 400px;background: gray"></div>
     </div>
 
     <div class="row">
@@ -90,27 +179,82 @@
     </div>
 
 
-    <div class="row text-center">
-        <div class="col-md-4">
-            <img src="Images/1.png" id="modelLeft" style="height: 350px">
+    <div class="row" style="margin-top:10px">
+        <div class="col-md-3 col-md-offset-1 thumbnail">
+            <ul class="text-center nav nav-tabs nav-stacked">
+                <li>
+                    <div>
+                        <h4 class="page-header"><a name="intro">介绍</a></h4>
+                        <ul class="text-center nav nav-tabs nav-stacked">
+                            <li><a onclick="setModel(1)">紫檀镶影木玉璧纹博古柜</a></li>
+                            <li><a onclick="setModel(2)">酸枝高屏斗钩式镶理石长椅</a></li>
+                            <li><a onclick="setModel(3)">酸枝书卷式花樽脚长几</a></li>
+                            <li><a onclick="setModel(4)">酸枝镶理石洋花林芝手椅</a></li>
+                            <li><a onclick="setModel(5)">紫檀镶理石双小几</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4 class="page-header"><a name="craft">工艺</a></h4>
+                        <ul class="text-center nav nav-tabs nav-stacked">
+                            <li><a onclick="inlay()">镶嵌</a></li>
+                            <li>雕刻</li>
+                            <li>花纹</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4 class="page-header"><a name="history">历史</a></h4>
+                        <ul class="text-center nav nav-tabs nav-stacked">
+                            <li>概况</li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <h4 class="page-header"><a name="about">关于</a></h4>
+                        <ul class="text-center nav nav-tabs nav-stacked">
+                            <li>作品信息</li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="col-md-4" id="modelShow" style="width: 350px; height: 350px;"></div>
-        <div class="col-md-4">
-            <img src="Images/1.png" id="modelRight" style="height: 350px">
+
+        <div class="col-md-6 col-md-push-1" id="contentIntro" style="display: none">
+            <div class="text-center">
+                <h2 id="furnitureTitle">紫檀镶影木玉璧纹博古柜</h2>
+                <p id="furnitureSize" class="text-right" style="padding: 0;margin: 0;color: gray">高*长*宽：210*80*35cm</p>
+                <hr style="padding-top: 0;margin-top: 5px">
+            </div>
+            <div class="text-right" style="line-height: 30px">
+                <p id="furnitureIntro">
+                    柜门镶以精细雕刻的菠萝格木玉璧纹<br>
+                    上方为格式，每个格精雕作为装饰<br>
+                    以金色彩木雕刻角花，柜上下面相亲，十分得体<br>
+                </p>
+            </div>
+            <div class="text-center">
+                <div style="margin-left:100px;width: 360px; height: 360px;" class="thumbnail">
+                    <div id="modelShow" style="width: 350px;height: 350px"></div>
+                </div>
+                <p id="furnitureName">紫檀镶影木玉璧纹博古柜</p>
+            </div>
+            <div>
+                <p id="furnitureLocal" style="margin-top:20px">广州高丰藏</p>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-5">
-            <button class="btn btn-default" onclick="setModel(1)">模型1</button>
-            <button class="btn btn-default" onclick="setModel(2)">模型2</button>
-            <button class="btn btn-default" onclick="setModel(3)">模型3</button>
-            <button class="btn btn-default" onclick="setModel(4)">模型4</button>
-            <button class="btn btn-default" onclick="setModel(5)">模型5</button>
-        </div>
-    </div>
+        <div class="col-md-6 col-md-push-1" id="contentCraft">
+            <div class="text-center">
+                <h2 class="page-header">广作工艺————镶嵌</h2>
+
+            </div>
 
 
+        </div>
+    </div>
     <div class="footer panel-footer">
         <p>页脚</p>
     </div>
