@@ -17,25 +17,35 @@
     <!--由于Bootstrap依赖jQuery，所以引入的时候要注意顺序-->
     <script src="Bootstrap/js/Bootstrap.min.js"></script>
     <script>
-//                var bannerBar = UnityLoader.instantiate("bannerBar", "BannerBar/BannerBar.json", {onProgress: UnityProgress});
-//                var modelShow = UnityLoader.instantiate("modelShow", "ModelShow/ModelShow.json", {onProgress: UnityProgress});
+        //                var bannerBar = UnityLoader.instantiate("bannerBar", "BannerBar/BannerBar.json", {onProgress: UnityProgress});
+        //                var modelShow = UnityLoader.instantiate("modelShow", "ModelShow/ModelShow.json", {onProgress: UnityProgress});
     </script>
     <Style>
         div[class="col-md-1"] {
             border: 1px solid red;
         }
 
+        .myParagraph:first-letter {
+            margin-left: 40px;
+        }
+
     </Style>
 
     <script type="text/javascript">
+
+        var Content = {};
+        Content.Intro = 1;
+        Content.CraftInlay = 2;
+        Content.CraftSculpture = 3;
+        Content.CraftDecorate = 4;
+
         function setBannerImage(i) {
             bannerBar.SendMessage("Scripts", "SetBannerImage", i);
 
         }
 
         function setModel(i) {
-            document.getElementById("contentIntro").style.display = "";
-            document.getElementById("contentCraft").style.display = "none";
+            showContext(Content.Intro);
 //            modelShow.SendMessage("Scripts", "ShowModel", i);
             var furnitureTitle = document.getElementById("furnitureTitle");
             var furnitureName = document.getElementById("furnitureName");
@@ -125,8 +135,23 @@
         }
 
         function inlay() {
-            document.getElementById("contentIntro").style.display = "none";
-            document.getElementById("contentCraft").style.display = "";
+            showContext(Content.CraftInlay);
+        }
+
+        function sculpture() {
+            showContext(Content.CraftSculpture);
+        }
+
+        function decorate() {
+            showContext(Content.CraftDecorate);
+
+        }
+
+        function showContext(content) {
+            document.getElementById("contentIntro").style.display = content === Content.Intro ? "" : "none";
+            document.getElementById("contentCraftSculpture").style.display = content === Content.CraftSculpture ? "" : "none";
+            document.getElementById("contentCraftInlay").style.display = content === Content.CraftInlay ? "" : "none";
+            document.getElementById("contentCraftDecorate").style.display = content === Content.CraftDecorate ? "" : "none";
         }
 
     </script>
@@ -199,8 +224,8 @@
                         <h4 class="page-header"><a name="craft">工艺</a></h4>
                         <ul class="text-center nav nav-tabs nav-stacked">
                             <li><a onclick="inlay()">镶嵌</a></li>
-                            <li>雕刻</li>
-                            <li>花纹</li>
+                            <li><a onclick="sculpture()">雕刻</a></li>
+                            <li><a onclick="decorate()">花纹</a></li>
                         </ul>
                     </div>
                 </li>
@@ -223,7 +248,7 @@
             </ul>
         </div>
 
-        <div class="col-md-6 col-md-push-1" id="contentIntro" style="display: none">
+        <div class="col-md-6 col-md-push-1" id="contentIntro">
             <div class="text-center">
                 <h2 id="furnitureTitle">紫檀镶影木玉璧纹博古柜</h2>
                 <p id="furnitureSize" class="text-right" style="padding: 0;margin: 0;color: gray">高*长*宽：210*80*35cm</p>
@@ -246,18 +271,132 @@
                 <p id="furnitureLocal" style="margin-top:20px">广州高丰藏</p>
             </div>
         </div>
-        <div class="col-md-6 col-md-push-1" id="contentCraft">
+        <div class="col-md-6 col-md-push-1" id="contentCraftInlay" style="display: none">
             <div class="text-center">
-                <h2 class="page-header">广作工艺————镶嵌</h2>
-
+                <h2 class="page-header">广作工艺——镶嵌</h2>
             </div>
-
-
+            <div style="width:500px; margin-left: 25px">
+                <p class="myParagraph">
+                    广作家具大量采用了西方的装饰风格及技巧，例如采用珐琅镶嵌、象牙雕刻、玻璃油画装饰，形成了一套广作家具独特的装手法。
+                </p>
+                <img src="Images/Inlay/20140415102338335.png" style="width: 500px;">
+                <h4 class="page-header">镶嵌种类</h4>
+                <p class="myParagraph">
+                    除了在家具上镶嵌大理石、螺钿外、玉石、宝石、珐琅、陶瓷、金属、黄杨木、象牙、琥珀。玻璃、油画等都能成为“广作”家具的镶嵌材料。
+                </p>
+                <div class="text-center" style="width: 500px; margin-top: 10px">
+                    <img src="Images/Inlay/镂空雕花？.png" style="width: 150px;">
+                    <img src="Images/Inlay/图层%201.png" style="width: 120px;margin-left: 20px">
+                    <br>
+                    <img src="Images/Inlay/镶嵌2.png" width="500px" style="margin-top: 20px"/>
+                </div>
+                <h4 class="page-header">螺钿</h4>
+                <p class="myParagraph">
+                    在广式家具上，螺钿镶是重要的装饰技法，它融镶嵌、雕刻、绘画于一体，艺术价值极高。因为嵌螺钿家具上的“螺钿”均选自江河湖畔中的老蚌，或鲍鱼壳等较为名贵的材料，制作成本较高，故在古代社会里被视为珍品。
+                </p>
+                <div class="text-center" style="width: 500px; margin-top: 10px">
+                    <img src="Images/Inlay/34b7490bf7461579e30934ef84d8c64c.png" style="width: 150px;">
+                    <img src="Images/Inlay/2012103109340466448293.png" style="width: 150px;margin-left: 20px">
+                </div>
+            </div>
+            <br>
         </div>
+
+        <div class="col-md-6 col-md-push-1" id="contentCraftSculpture" style="display: none">
+            <div class="text-center">
+                <h2 class="page-header">广作工艺——雕刻</h2>
+            </div>
+            <div style="width:500px; margin-left: 25px">
+                <p class="myParagraph">
+                    广作家具的装饰花纹雕刻深浅，工艺多年浮雕、通雕和刻线的沉雕等三种，有时候还兼有镂雕。有的雕饰面积高达80%以上：雕刻的花纹隆起较高，个别部位近似圆雕，磨工精细。
+                </p>
+                <img src="Images/Sculpture/1442456798532.png" style="width: 500px;">
+                <h4 class="page-header">雕刻种类</h4>
+                <div class="text-center" style="width: 500px; margin-top: 50px;margin-bottom: 0px">
+                    <ul class="list-unstyled list-inline">
+                        <li>
+                            <img src="Images/Sculpture/圆角矩形%201%20拷贝%202.png" style="width: 100px;">
+                            <p>镂雕</p>
+                        </li>
+                        <li>
+                            <img src="Images/Sculpture/圆角矩形%201%20拷贝%203.png" style="width: 100px;">
+                            <p>沉雕</p>
+                        </li>
+                        <li>
+                            <img src="Images/Sculpture/圆角矩形%201%20拷贝.png" style="width: 100px;">
+                            <p>通雕</p>
+                        </li>
+                        <li>
+                            <img src="Images/Sculpture/圆角矩形%201.png" style="width: 100px;">
+                            <p>浮雕</p>
+                        </li>
+                    </ul>
+                </div>
+                <h4 class="page-header">刀法圆熟，磨工精细</h4>
+                <p class="myParagraph">
+                    它的雕刻额风格，在一定程度上受西方建筑雕刻的影响。雕刻花纹隆起较高，个别部位近似圆雕，加上磨工精细，试花纹表面莹滑如玉，洗好不露刀凿痕迹。
+                </p>
+
+                <img src="Images/Sculpture/wKgEK1VMPRaINr7XAAFC8A7-MAAAANergB8Z2sAAUMI942.png" width="500px"/>
+                <h4 class="page-header">三分做工，七分打磨</h4>
+                <p class="myParagraph">
+                    广府家具的雕刻制作中，有这种说法。打磨功夫深刻入微，特别是那些细微、深凹之处，都能打磨的非常光滑。
+                </p>
+                <div class="text-center" style="width: 500px; margin-top: 10px">
+                    <img src="Images/Sculpture/318755-130F50H01363.png" style="width: 150px;">
+                    <img src="Images/Sculpture/mhrf-cpmh-14331.png" style="width: 150px;margin-left: 20px">
+                </div>
+                <br>
+            </div>
+        </div>
+        <div class="col-md-6 col-md-push-1" id="contentCraftDecorate" style="display: none">
+            <div class="text-center">
+                <h2 class="page-header">广作工艺——花纹</h2>
+            </div>
+            <div style="width:500px; margin-left: 25px">
+                <p class="myParagraph">
+                    广式家具上装饰纹样的题材广泛且极富情趣。除了有中国传统装饰图案为题材的瑞兽纹、花鸟纹、回纹、方胜纹、博古纹和万字纹。
+                </p>
+                <img src="Images/Decorate/544_20131111024008427348_1.png" style="width: 500px;">
+                <h4 class="page-header">花纹种类</h4>
+                <div class="text-center" style="width: 500px; margin-top: 50px;margin-bottom: 0px">
+                    <ul class="list-unstyled list-inline">
+                        <li style="width: 140px">
+                            <img src="Images/Decorate/圆角矩形%202%20拷贝%202.png" style="width: 100px;">
+                        </li>
+                        <li style="width: 140px">
+                            <img src="Images/Decorate/圆角矩形%202%20拷贝.png" style="width: 100px;">
+                        </li>
+                        <li style="width: 140px">
+                            <img src="Images/Decorate/圆角矩形%202.png" style="width: 100px;">
+                        </li>
+                    </ul>
+                </div>
+                <h4 class="page-header">传统花纹</h4>
+                <p class="myParagraph">
+                    广式家具除西式装饰花纹外，也有相当数量的传统花纹。如各种形式的海水云龙、海水江崖。云纹、凤纹、蝙蝠纹、缠枝或枝花卉以及各种花边装饰。
+                </p>
+
+                <img src="Images/Decorate/re_561f4f1926be4.png" width="500px"/>
+                <h4 class="page-header">西洋花纹</h4>
+                <p class="myParagraph">
+                    广府家具以“洋花”、“洋草”占有相当比例，除各式各样西番莲以外，还有蔓草纹、葡萄纹、鲨鱼纹样等。中国的传统装饰纹样
+                </p>
+                <div class="text-center" style="width: 500px; margin-top: 10px">
+                    <img src="Images/Decorate/圆角矩形%203%20拷贝.png" style="width: 150px;">
+                    <img src="Images/Decorate/圆角矩形%203.png" style="width: 150px;margin-left: 20px">
+                </div>
+                <br>
+            </div>
+        </div>
+
+
     </div>
-    <div class="footer panel-footer">
-        <p>页脚</p>
-    </div>
+</div>
+<div class=" footer panel-footer
+            ">
+    <p>页脚</p>
+</div>
 </div>
 </body>
 </html>
