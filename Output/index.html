@@ -33,11 +33,18 @@
 
     <script type="text/javascript">
 
+        var Menu = {};
+        Menu.introMenu = 1;
+        Menu.craftMenu = 2;
+        Menu.historyMenu = 3;
+        Menu.aboutMenu = 4;
+
         var Content = {};
         Content.Intro = 1;
         Content.CraftInlay = 2;
         Content.CraftSculpture = 3;
         Content.CraftDecorate = 4;
+
 
         function setBannerImage(i) {
             bannerBar.SendMessage("Scripts", "SetBannerImage", i);
@@ -106,32 +113,27 @@
             }
         }
 
+        function selectMenu(menu) {
+            document.getElementById("introMenu").className = menu===Menu.introMenu?"active":"";
+            document.getElementById("craftMenu").className = menu===Menu.craftMenu?"active":"";
+            document.getElementById("historyMenu").className = menu===Menu.historyMenu?"active":"";
+            document.getElementById("aboutMenu").className = menu===Menu.aboutMenu?"active":"";
+        }
+
         function selectIntroMenu() {
-            document.getElementById("introMenu").className = "active";
-            document.getElementById("craftMenu").className = "";
-            document.getElementById("historyMenu").className = "";
-            document.getElementById("aboutMenu").className = "";
+            selectMenu(Menu.introMenu);
         }
 
         function selectCraftMenu() {
-            document.getElementById("introMenu").className = "";
-            document.getElementById("craftMenu").className = "active";
-            document.getElementById("historyMenu").className = "";
-            document.getElementById("aboutMenu").className = "";
+            selectMenu(Menu.craftMenu);
         }
 
         function selectHistoryMenu() {
-            document.getElementById("introMenu").className = "";
-            document.getElementById("craftMenu").className = "";
-            document.getElementById("historyMenu").className = "active";
-            document.getElementById("aboutMenu").className = "";
+            selectMenu(Menu.historyMenu);
         }
 
         function selectAboutMenu() {
-            document.getElementById("introMenu").className = "";
-            document.getElementById("craftMenu").className = "";
-            document.getElementById("historyMenu").className = "";
-            document.getElementById("aboutMenu").className = "active";
+            selectMenu(Menu.aboutMenu);
         }
 
         function inlay() {
