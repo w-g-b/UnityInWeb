@@ -17,8 +17,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="186" column="54" lean-forward="true" selection-start-line="186" selection-start-column="54" selection-end-line="186" selection-end-column="54" />
+            <state relative-caret-position="180">
+              <caret line="189" column="6" lean-forward="true" selection-start-line="189" selection-start-column="6" selection-end-line="189" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -72,57 +72,15 @@
                 <element signature="n#style#0;n#img#2;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#3;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#19750#19756#0" expanded="true" />
-                <element signature="e#19756#19762#0" expanded="true" />
-                <element signature="e#19762#19768#0" expanded="true" />
-                <element signature="e#19768#19774#0" expanded="true" />
-                <element signature="e#19788#19794#0" expanded="true" />
-                <element signature="e#19794#19800#0" expanded="true" />
-                <element signature="e#19800#19806#0" expanded="true" />
-                <element signature="e#19806#19812#0" expanded="true" />
+                <element signature="e#20918#20924#0" expanded="true" />
+                <element signature="e#20924#20930#0" expanded="true" />
+                <element signature="e#20930#20936#0" expanded="true" />
+                <element signature="e#20936#20942#0" expanded="true" />
+                <element signature="e#20956#20962#0" expanded="true" />
+                <element signature="e#20962#20968#0" expanded="true" />
+                <element signature="e#20968#20974#0" expanded="true" />
+                <element signature="e#20974#20980#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CallJS.jslib" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../Assets/Plugins/CallJS.jslib">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnityProgress.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TemplateData/UnityProgress.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="62" lean-forward="false" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BannerBar.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/BannerBar/BannerBar.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-              <folding>
-                <marker date="1530177974374" expanded="true" signature="0:438" ph="{&quot;companyName&quot;: &quot;DefaultCompany&quot;...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ModelShow.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ModelShow/ModelShow.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="24" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -134,6 +92,7 @@
       <find>contentDecorate</find>
       <find>contenthi</find>
       <find>aboutmen</find>
+      <find>point</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -142,9 +101,9 @@
         <option value="F:/web/UnityWeb/index.html" />
         <option value="$PROJECT_DIR$/../../Snake/WebGL2/index.html" />
         <option value="$PROJECT_DIR$/../Assets/Plugins/WebGL/CallJS.jslib" />
-        <option value="$PROJECT_DIR$/../Assets/Plugins/CallJS.jslib" />
         <option value="$PROJECT_DIR$/ModelShow/ModelShow.json" />
         <option value="$PROJECT_DIR$/BannerBar/BannerBar.json" />
+        <option value="$PROJECT_DIR$/../Assets/Plugins/CallJS.jslib" />
         <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
@@ -163,10 +122,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1905" />
-    <option name="y" value="221" />
-    <option name="width" value="1326" />
-    <option name="height" value="774" />
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1456" />
+    <option name="height" value="876" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -190,6 +149,38 @@
             <path>
               <item name="Output" type="b2602c69:ProjectViewProjectNode" />
               <item name="Output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Output" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Output" type="462c0819:PsiDirectoryNode" />
+              <item name="BannerBar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Output" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Output" type="462c0819:PsiDirectoryNode" />
+              <item name="Bootstrap" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Output" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Output" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Output" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Output" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+              <item name="Decorate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Output" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Output" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+              <item name="History" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Output" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Output" type="462c0819:PsiDirectoryNode" />
+              <item name="ModelShow" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -245,23 +236,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529926641521</updated>
-      <workItem from="1529926642741" duration="59414000" />
+      <workItem from="1529926642741" duration="65515000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59414000" />
+    <option name="totallyTimeSpent" value="65515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1456" height="876" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38504937" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24894217" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3674189" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24118477" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08240224" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -459,14 +450,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../Assets/Plugins/CallJS.jslib">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ModelShow/ModelShow.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -480,15 +463,88 @@
         <state relative-caret-position="30">
           <caret line="2" column="26" lean-forward="true" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
           <folding>
-            <marker date="1530177974374" expanded="true" signature="0:438" ph="{&quot;companyName&quot;: &quot;DefaultCompany&quot;...}" />
+            <marker date="1530191005825" expanded="true" signature="0:438" ph="{&quot;companyName&quot;: &quot;DefaultCompany&quot;...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Sculpture/diaoke1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Sculpture/diaoke2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Sculpture/diaoke3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Sculpture/diaoke4.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Sculpture/fudiao.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Sculpture/chendiao.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Sculpture/loudiao.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Inlay/loutian1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Inlay/loutian2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Inlay/zhonglei1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Inlay/xiangqian2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Inlay/zhonglei2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Images/Inlay/xiangqian1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../Assets/Plugins/CallJS.jslib">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="3" lean-forward="false" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="186" column="54" lean-forward="true" selection-start-line="186" selection-start-column="54" selection-end-line="186" selection-end-column="54" />
+        <state relative-caret-position="180">
+          <caret line="189" column="6" lean-forward="true" selection-start-line="189" selection-start-column="6" selection-end-line="189" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -542,14 +598,14 @@
             <element signature="n#style#0;n#img#2;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#3;n#div#1;n#div#5;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#19750#19756#0" expanded="true" />
-            <element signature="e#19756#19762#0" expanded="true" />
-            <element signature="e#19762#19768#0" expanded="true" />
-            <element signature="e#19768#19774#0" expanded="true" />
-            <element signature="e#19788#19794#0" expanded="true" />
-            <element signature="e#19794#19800#0" expanded="true" />
-            <element signature="e#19800#19806#0" expanded="true" />
-            <element signature="e#19806#19812#0" expanded="true" />
+            <element signature="e#20918#20924#0" expanded="true" />
+            <element signature="e#20924#20930#0" expanded="true" />
+            <element signature="e#20930#20936#0" expanded="true" />
+            <element signature="e#20936#20942#0" expanded="true" />
+            <element signature="e#20956#20962#0" expanded="true" />
+            <element signature="e#20962#20968#0" expanded="true" />
+            <element signature="e#20968#20974#0" expanded="true" />
+            <element signature="e#20974#20980#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -17,8 +17,8 @@
     <!--由于Bootstrap依赖jQuery，所以引入的时候要注意顺序-->
     <script src="Bootstrap/js/Bootstrap.min.js"></script>
     <script>
-          var bannerBar = UnityLoader.instantiate("bannerBar", "BannerBar/BannerBar.json", {onProgress: UnityProgress});
-          var modelShow = UnityLoader.instantiate("modelShow", "ModelShow/ModelShow.json", {onProgress: UnityProgress});
+        var bannerBar = UnityLoader.instantiate("bannerBar", "BannerBar/BannerBar.json", {onProgress: UnityProgress});
+        var modelShow = UnityLoader.instantiate("modelShow", "ModelShow/ModelShow.json", {onProgress: UnityProgress});
     </script>
     <Style>
         div[class="col-md-1"] {
@@ -28,6 +28,7 @@
         .myParagraph:first-letter {
             margin-left: 30px;
         }
+
 
     </Style>
 
@@ -47,10 +48,22 @@
         Content.History = 5;
         Content.About = 6;
 
+        var Point = {};
+        Point.One = 1;
+        Point.Two = 2;
+        Point.Three = 3;
+
 
         function setBannerImage(i) {
             bannerBar.SendMessage("Scripts", "SetBannerImage", i);
+            showPointActive(i);
 
+        }
+
+        function showPointActive(i) {
+            document.getElementById("point1").src = i === Point.One ? "Images/point_active.png" : "Images/point_default.png";
+            document.getElementById("point2").src = i === Point.Two ? "Images/point_active.png" : "Images/point_default.png";
+            document.getElementById("point3").src = i === Point.Three ? "Images/point_active.png" : "Images/point_default.png";
         }
 
         function setModel(i) {
@@ -171,6 +184,7 @@
             document.getElementById("contentHistory").style.display = content === Content.History ? "" : "none";
         }
 
+
     </script>
 </head>
 <body>
@@ -190,10 +204,19 @@
             </div>
         </div>
     </nav>
-
     <div class="row" style="margin-top:60px;">
         <div id="bannerBar" class="col-md-10 col-md-push-1" style="height: 400px; background: gray"></div>
-        <div class="col-md-2 col-md-pull-5" style="margin-top: 330px" id="bannerButton">
+        <div class="col-md-2 col-md-pull-5" style="margin-top: 360px;" id="bannerPoint">
+            <!--
+            <ul class="list-unstyled list-inline" style="margin-left: 50px">
+                <li><img id="point1" class="img-circle" style="background-color: #CCCCCC;width: 15px;height: 15px;"
+                         onclick="setBannerImage(1)" src="Images/point_active.png"></li>
+                <li><img id="point2" class="img-circle" style="background-color: #CCCCCC;width: 15px;height: 15px;"
+                         onclick="setBannerImage(2)" src="Images/point_default.png"></li>
+                <li><img id="point3" class="img-circle" style="background-color: #CCCCCC;width: 15px;height: 15px;"
+                         onclick="setBannerImage(3)" src="Images/point_default.png"></li>
+            </ul>-->
+
         </div>
         <a name="content"></a>
     </div>
@@ -274,24 +297,24 @@
                 <p class="myParagraph">
                     广作家具大量采用了西方的装饰风格及技巧，例如采用珐琅镶嵌、象牙雕刻、玻璃油画装饰，形成了一套广作家具独特的装手法。
                 </p>
-                <img src="Images/Inlay/20140415102338335.png" style="width: 500px;">
+                <img src="Images/Inlay/xiangqian2.png" style="width: 500px;">
                 <h4 class="page-header">镶嵌种类</h4>
                 <p class="myParagraph">
                     除了在家具上镶嵌大理石、螺钿外、玉石、宝石、珐琅、陶瓷、金属、黄杨木、象牙、琥珀。玻璃、油画等都能成为“广作”家具的镶嵌材料。
                 </p>
                 <div class="text-center" style="width: 500px; margin-top: 10px">
-                    <img src="Images/Inlay/镂空雕花？.png" style="width: 150px;">
+                    <img src="Images/Inlay/zhonglei2.png" style="width: 150px;">
                     <img src="Images/Inlay/图层%201.png" style="width: 120px;margin-left: 20px">
                     <br>
-                    <img src="Images/Inlay/镶嵌2.png" width="500px" style="margin-top: 20px"/>
+                    <img src="Images/Inlay/xiangqian1.png" width="500px" style="margin-top: 20px"/>
                 </div>
                 <h4 class="page-header">螺钿</h4>
                 <p class="myParagraph">
                     在广式家具上，螺钿镶是重要的装饰技法，它融镶嵌、雕刻、绘画于一体，艺术价值极高。因为嵌螺钿家具上的“螺钿”均选自江河湖畔中的老蚌，或鲍鱼壳等较为名贵的材料，制作成本较高，故在古代社会里被视为珍品。
                 </p>
                 <div class="text-center" style="width: 500px; margin-top: 10px">
-                    <img src="Images/Inlay/34b7490bf7461579e30934ef84d8c64c.png" style="width: 150px;">
-                    <img src="Images/Inlay/2012103109340466448293.png" style="width: 150px;margin-left: 20px">
+                    <img src="Images/Inlay/loutian1.png" style="width: 150px;">
+                    <img src="Images/Inlay/loutian2.png" style="width: 150px;margin-left: 20px">
                 </div>
             </div>
             <br>
@@ -305,7 +328,7 @@
                 <p class="myParagraph">
                     广作家具的装饰花纹雕刻深浅，工艺多年浮雕、通雕和刻线的沉雕等三种，有时候还兼有镂雕。有的雕饰面积高达80%以上：雕刻的花纹隆起较高，个别部位近似圆雕，磨工精细。
                 </p>
-                <img src="Images/Sculpture/1442456798532.png" style="width: 500px;">
+                <img src="Images/Sculpture/diaoke3.png" style="width: 500px;">
                 <h4 class="page-header">雕刻种类</h4>
                 <div class="text-center" style="width: 500px; margin-top: 50px;margin-bottom: 0px">
                     <ul class="list-unstyled list-inline">
@@ -332,14 +355,14 @@
                     它的雕刻额风格，在一定程度上受西方建筑雕刻的影响。雕刻花纹隆起较高，个别部位近似圆雕，加上磨工精细，试花纹表面莹滑如玉，洗好不露刀凿痕迹。
                 </p>
 
-                <img src="Images/Sculpture/wKgEK1VMPRaINr7XAAFC8A7-MAAAANergB8Z2sAAUMI942.png" width="500px"/>
+                <img src="Images/Sculpture/diaoke4.png" width="500px"/>
                 <h4 class="page-header">三分做工，七分打磨</h4>
                 <p class="myParagraph">
                     广府家具的雕刻制作中，有这种说法。打磨功夫深刻入微，特别是那些细微、深凹之处，都能打磨的非常光滑。
                 </p>
                 <div class="text-center" style="width: 500px; margin-top: 10px">
-                    <img src="Images/Sculpture/318755-130F50H01363.png" style="width: 150px;">
-                    <img src="Images/Sculpture/mhrf-cpmh-14331.png" style="width: 150px;margin-left: 20px">
+                    <img src="Images/Sculpture/diaoke1.png" style="width: 150px;">
+                    <img src="Images/Sculpture/diaoke2.png" style="width: 150px;margin-left: 20px">
                 </div>
                 <br>
             </div>
@@ -352,7 +375,7 @@
                 <p class="myParagraph">
                     广式家具上装饰纹样的题材广泛且极富情趣。除了有中国传统装饰图案为题材的瑞兽纹、花鸟纹、回纹、方胜纹、博古纹和万字纹。
                 </p>
-                <img src="Images/Decorate/544_20131111024008427348_1.png" style="width: 500px;">
+                <img src="Images/Decorate/huawenjiaju1.png" style="width: 500px;">
                 <h4 class="page-header">花纹种类</h4>
                 <div class="text-center" style="width: 500px; margin-top: 50px;margin-bottom: 0px">
                     <ul class="list-unstyled list-inline">
@@ -372,7 +395,7 @@
                     广式家具除西式装饰花纹外，也有相当数量的传统花纹。如各种形式的海水云龙、海水江崖。云纹、凤纹、蝙蝠纹、缠枝或枝花卉以及各种花边装饰。
                 </p>
 
-                <img src="Images/Decorate/re_561f4f1926be4.png" width="500px"/>
+                <img src="Images/Decorate/hauwenjiaju2.png" width="500px"/>
                 <h4 class="page-header">西洋花纹</h4>
                 <p class="myParagraph">
                     广府家具以“洋花”、“洋草”占有相当比例，除各式各样西番莲以外，还有蔓草纹、葡萄纹、鲨鱼纹样等。中国的传统装饰纹样
@@ -426,8 +449,6 @@
                 </p>
             </div>
         </div>
-
-
     </div>
 </div>
 <footer class="nav navbar-inverse">
