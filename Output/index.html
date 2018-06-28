@@ -17,8 +17,8 @@
     <!--由于Bootstrap依赖jQuery，所以引入的时候要注意顺序-->
     <script src="Bootstrap/js/Bootstrap.min.js"></script>
     <script>
-        //                var bannerBar = UnityLoader.instantiate("bannerBar", "BannerBar/BannerBar.json", {onProgress: UnityProgress});
-        //                var modelShow = UnityLoader.instantiate("modelShow", "ModelShow/ModelShow.json", {onProgress: UnityProgress});
+          var bannerBar = UnityLoader.instantiate("bannerBar", "BannerBar/BannerBar.json", {onProgress: UnityProgress});
+          var modelShow = UnityLoader.instantiate("modelShow", "ModelShow/ModelShow.json", {onProgress: UnityProgress});
     </script>
     <Style>
         div[class="col-md-1"] {
@@ -26,7 +26,7 @@
         }
 
         .myParagraph:first-letter {
-            margin-left: 40px;
+            margin-left: 30px;
         }
 
     </Style>
@@ -44,6 +44,8 @@
         Content.CraftInlay = 2;
         Content.CraftSculpture = 3;
         Content.CraftDecorate = 4;
+        Content.History = 5;
+        Content.About = 6;
 
 
         function setBannerImage(i) {
@@ -52,8 +54,8 @@
         }
 
         function setModel(i) {
-            showContext(Content.Intro);
-//            modelShow.SendMessage("Scripts", "ShowModel", i);
+            showContent(Content.Intro);
+            modelShow.SendMessage("Scripts", "ShowModel", i);
             var furnitureTitle = document.getElementById("furnitureTitle");
             var furnitureName = document.getElementById("furnitureName");
             var furnitureIntro = document.getElementById("furnitureIntro");
@@ -114,46 +116,59 @@
         }
 
         function selectMenu(menu) {
-            document.getElementById("introMenu").className = menu===Menu.introMenu?"active":"";
-            document.getElementById("craftMenu").className = menu===Menu.craftMenu?"active":"";
-            document.getElementById("historyMenu").className = menu===Menu.historyMenu?"active":"";
-            document.getElementById("aboutMenu").className = menu===Menu.aboutMenu?"active":"";
+            document.getElementById("introMenu").className = menu === Menu.introMenu ? "active" : "";
+            document.getElementById("craftMenu").className = menu === Menu.craftMenu ? "active" : "";
+            document.getElementById("historyMenu").className = menu === Menu.historyMenu ? "active" : "";
+            document.getElementById("aboutMenu").className = menu === Menu.aboutMenu ? "active" : "";
         }
 
         function selectIntroMenu() {
             selectMenu(Menu.introMenu);
+            showContent(Content.Intro);
         }
 
         function selectCraftMenu() {
             selectMenu(Menu.craftMenu);
+            showContent(Content.CraftInlay);
         }
 
         function selectHistoryMenu() {
             selectMenu(Menu.historyMenu);
+            showContent(Content.History);
         }
 
         function selectAboutMenu() {
             selectMenu(Menu.aboutMenu);
+            showContent(Content.About);
         }
 
         function inlay() {
-            showContext(Content.CraftInlay);
+            showContent(Content.CraftInlay);
         }
 
         function sculpture() {
-            showContext(Content.CraftSculpture);
+            showContent(Content.CraftSculpture);
         }
 
         function decorate() {
-            showContext(Content.CraftDecorate);
+            showContent(Content.CraftDecorate);
 
         }
 
-        function showContext(content) {
+        function history() {
+            showContent(Content.History);
+        }
+
+        function about() {
+            showContent(Content.About);
+        }
+
+        function showContent(content) {
             document.getElementById("contentIntro").style.display = content === Content.Intro ? "" : "none";
             document.getElementById("contentCraftSculpture").style.display = content === Content.CraftSculpture ? "" : "none";
             document.getElementById("contentCraftInlay").style.display = content === Content.CraftInlay ? "" : "none";
             document.getElementById("contentCraftDecorate").style.display = content === Content.CraftDecorate ? "" : "none";
+            document.getElementById("contentHistory").style.display = content === Content.History ? "" : "none";
         }
 
     </script>
@@ -167,51 +182,27 @@
             </div>
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active" id="introMenu" onclick="selectIntroMenu()"><a href="#intro">介绍</a></li>
-                    <li id="craftMenu" onclick="selectCraftMenu()"><a href="#craft">工艺</a></li>
-                    <li id="historyMenu" onclick="selectHistoryMenu()"><a href="#history">历史</a></li>
-                    <li id="aboutMenu" onclick="selectAboutMenu()"><a href="#about">关于</a></li>
+                    <li id="introMenu" onclick="selectIntroMenu()"><a href="#content">介绍</a></li>
+                    <li id="craftMenu" onclick="selectCraftMenu()"><a href="#content">工艺</a></li>
+                    <li id="historyMenu" onclick="selectHistoryMenu()"><a href="#content">历史</a></li>
+                    <li id="aboutMenu" onclick="selectAboutMenu()"><a href="#content">关于</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <div class="row" style="margin-top: 50px;">
-        <div class="col-md-1">col-1</div>
-        <div class="col-md-1">col-2</div>
-        <div class="col-md-1">col-3</div>
-        <div class="col-md-1">col-4</div>
-        <div class="col-md-1">col-5</div>
-        <div class="col-md-1">col-6</div>
-        <div class="col-md-1">col-7</div>
-        <div class="col-md-1">col-8</div>
-        <div class="col-md-1">col-9</div>
-        <div class="col-md-1">col-10</div>
-        <div class="col-md-1">col-11</div>
-        <div class="col-md-1">col-12</div>
-    </div>
-    <div class="row">
-        <div id="bannerBar" class="col-md-10 col-md-push-1" style="height: 400px;background: gray"></div>
-    </div>
 
-    <div class="row">
-    </div>
-
-    <div class="row">
-        <div class="col-md-5"></div>
-        <div class="col-md-3">
-            <button class="btn btn-default" onclick="setBannerImage(1)">按钮1</button>
-            <button class="btn btn-default" onclick="setBannerImage(2)">按钮2</button>
-            <button class="btn btn-default" onclick="setBannerImage(3)">按钮3</button>
+    <div class="row" style="margin-top:60px;">
+        <div id="bannerBar" class="col-md-10 col-md-push-1" style="height: 400px; background: gray"></div>
+        <div class="col-md-2 col-md-pull-5" style="margin-top: 330px" id="bannerButton">
         </div>
+        <a name="content"></a>
     </div>
-
-
     <div class="row" style="margin-top:10px">
         <div class="col-md-3 col-md-offset-1 thumbnail">
             <ul class="text-center nav nav-tabs nav-stacked">
                 <li>
                     <div>
-                        <h4 class="page-header"><a name="intro">介绍</a></h4>
+                        <h4 class="page-header">介绍</h4>
                         <ul class="text-center nav nav-tabs nav-stacked">
                             <li><a onclick="setModel(1)">紫檀镶影木玉璧纹博古柜</a></li>
                             <li><a onclick="setModel(2)">酸枝高屏斗钩式镶理石长椅</a></li>
@@ -223,7 +214,7 @@
                 </li>
                 <li>
                     <div>
-                        <h4 class="page-header"><a name="craft">工艺</a></h4>
+                        <h4 class="page-header">工艺</h4>
                         <ul class="text-center nav nav-tabs nav-stacked">
                             <li><a onclick="inlay()">镶嵌</a></li>
                             <li><a onclick="sculpture()">雕刻</a></li>
@@ -233,27 +224,28 @@
                 </li>
                 <li>
                     <div>
-                        <h4 class="page-header"><a name="history">历史</a></h4>
+                        <h4 class="page-header">历史</h4>
                         <ul class="text-center nav nav-tabs nav-stacked">
-                            <li>概况</li>
+                            <li><a onclick="history()">概况</a></li>
                         </ul>
                     </div>
                 </li>
                 <li>
                     <div>
-                        <h4 class="page-header"><a name="about">关于</a></h4>
+                        <h4 class="page-header">关于</h4>
                         <ul class="text-center nav nav-tabs nav-stacked">
-                            <li>作品信息</li>
+                            <li><a onclick="about()">作品说明</a></li>
+                            <li><a onclick="about()">团队成员</a></li>
+                            <li><a onclick="about()">安卓版下载</a></li>
                         </ul>
                     </div>
                 </li>
             </ul>
         </div>
-
         <div class="col-md-6 col-md-push-1" id="contentIntro">
             <div class="text-center">
                 <h2 id="furnitureTitle">紫檀镶影木玉璧纹博古柜</h2>
-                <p id="furnitureSize" class="text-right" style="padding: 0;margin: 0;color: gray">高*长*宽：210*80*35cm</p>
+
                 <hr style="padding-top: 0;margin-top: 5px">
             </div>
             <div class="text-right" style="line-height: 30px">
@@ -262,6 +254,7 @@
                     上方为格式，每个格精雕作为装饰<br>
                     以金色彩木雕刻角花，柜上下面相亲，十分得体<br>
                 </p>
+                <p id="furnitureSize" class="text-right" style="padding: 0;margin: 0;color: gray">高*长*宽：210*80*35cm</p>
             </div>
             <div class="text-center">
                 <div style="margin-left:100px;width: 360px; height: 360px;" class="thumbnail">
@@ -392,13 +385,56 @@
             </div>
         </div>
 
+        <div class="col-md-6 col-md-push-1" id="contentHistory" style="display: none">
+            <div class="text-center">
+                <h2 class="page-header">广府家具历史</h2>
+            </div>
+            <div style="width:500px; margin-left: 25px">
+                <h4><b>发展脉络</b></h4>
+                <p class="myParagraph">
+                    1635年，清朝建立；1685年（康熙二十四年）开放海禁，设广东为通商口岸；1736年（乾隆元年）京城内务府造办处正式成立“广木作”，纳广东优秀木作匠人入宫为皇帝制作家具等一系列历史事件。
+                </p>
+                <p class="myParagraph">
+                    将广州这座濒临南海的千年之城推向了清代主流家具流派——广作家具孕育地的高度，一个时代的艺术瑰宝在此诞生。
+                </p>
+                <img src="Images/History/背景%20拷贝.png" style="width: 300px; margin-left: 100px">
+                <h4><b>形成时间</b></h4>
+                <p class="myParagraph">
+                    业内专家普遍认定是在清初期，并在清中期成为主流传统家具流派。然在此之前，广州一地已早有硬木家具制作，只是未形成如清代广作般的成熟独立风格。
+                </p>
+                <img src="Images/History/背景%20拷贝2.png" width="300px" style="width: 300px; margin-left: 100px"/>
+                <p class="myParagraph">
+                    《博物要览》记载：“花莉产交（交趾）广（即广东、广西）溪涧，一名花榈树，叶如梨而木实，木色红紫而肌理细腻，可做器具、桌、椅、文房诸器”。
+                </p>
+                <p class="myParagraph">
+                    作为国内贵重木材的主要 产地之一，广东拥有较为悠久的硬木家具制作历史，如今，我们尚能看到一些明代遗存下来的广东家具。
+                </p>
+                <img src="Images/History/背景%20拷贝3.png" width="300px" style="width: 300px; margin-left: 100px"/>
+                <h4><b>形成原因</b></h4>
+                <p class="myParagraph">
+                    明末清初，西方传教士大量来华，在传播先进科学技术的同时，也带来了西洋的艺术和文化。
+                </p>
+                <p class="myParagraph">
+                    广州由于其特殊的地理位置，成为我国对外贸易和文化交流的一个重要门户。至清初，随着对外贸易的进一步发展，广州的商馆、十三洋行等先后建立，这些商业机构的建筑大都模仿西洋形式，一时间官府、民居也竞相效仿，在这座东方古城中掀起了一股西洋风尚。西式建筑、西洋画派、行走于街头巷尾的洋人。
+                </p>
+                <img src="Images/History/背景%20拷贝4.png" width="300px" style="width: 300px; margin-left: 100px"/>
+                <p class="myParagraph">
+                    所有这一切新鲜元素都为广州人打开了一扇与中国传统审美不同的窗户，透过此，他们看到了世界的艺术流行，拥有了全球化的审美眼光。
+                </p>
+                <p class="myParagraph">
+                    当视野打开之后，开始大胆地将西洋艺术融入到中国传统艺术形式之中。于是，清代广作家具华丽诞生了。
+                </p>
+            </div>
+        </div>
+
 
     </div>
 </div>
-<div class=" footer panel-footer
-            ">
-    <p>页脚</p>
-</div>
+<footer class="nav navbar-inverse">
+    <div style="float: right;margin-right: 200px; color: gray;">
+        www.gbdev.cn&nbsp;&nbsp;&nbsp;&nbsp;粤ICP备18057768号&nbsp;&nbsp;&nbsp;&nbsp;MAKE BY WGB
+    </div>
+</footer>
 </div>
 </body>
 </html>
